@@ -44,7 +44,7 @@ public class autoLoad {
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<String> nameList = new ArrayList<>();
     public static ArrayList<String> follow = new ArrayList<>();
-    public static String followed= "@hanif, @jakir";
+    public static String followed= "@hanif, @tikfollow";
 
 
 
@@ -186,12 +186,8 @@ public class autoLoad {
                 dict = dict.replace("{", "");
                 dict = dict.replace("}", "");
                 String[] list = dict.split(",");
-                if (followed != null ){
-                    if (followed.length()>3) {
-                        String[] foll = followed.split(",");
-                        follow.addAll(Arrays.asList(foll));
-                    }
-                }
+                String[] foll = followed.split(",");
+                follow.addAll(Arrays.asList(foll));
 
 
 //jei id gulake follow kora hoiche oigulake splash screen hote followed variable a

@@ -32,7 +32,7 @@ public class splash extends AppCompatActivity {
 
             autoLoad.userName = username;
             autoLoad.getdata();
-            Intent myIntent = new Intent(splash.this, doTask.class);
+            Intent myIntent = new Intent(splash.this, Download.class);
             startActivity(myIntent);
         }
     }

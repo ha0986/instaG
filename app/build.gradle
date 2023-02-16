@@ -10,8 +10,8 @@ android {
         applicationId "com.hanif.likeefollow"
         minSdk 21
         targetSdk 33
-        versionCode 6
-        versionName "0.6"
+        versionCode 7
+        versionName "0.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,7 +24,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -49,7 +49,10 @@ dependencies {
     implementation "com.airbnb.android:lottie:5.2.0"
     implementation 'com.google.android.play:app-update:2.0.1'
 
-
+//download video
+    implementation 'org.jsoup:jsoup:1.15.3'
+//permission
+    implementation 'com.karumi:dexter:6.2.3'
 
 }
 

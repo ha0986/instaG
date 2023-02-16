@@ -32,7 +32,9 @@
     <string name="loading_jokes">Loading Jokes</string>
     <string name="click_to_claim_bonus">Click TO Claim Bonus</string>
     <string name="ha">ha</string>
-    <string name="rate_me">Rate me</string>
+    <string name="rate_me">Rate</string>
     <string name="jokes">jokes</string>
     <string name="proof">Proof</string>
+    <string name="enter_video_link_here">Enter video link here</string>
+    <string name="download">Download</string>
 </resources>

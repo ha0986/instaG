@@ -65,7 +65,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         jokes.setOnClickListener(this);
         follow.setOnClickListener(this);
         bonus.setOnClickListener(this);
-
+        rate.setOnClickListener(this);
+        proof.setOnClickListener(this);
 
 
         autoLoad.getDatas();

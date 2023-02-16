@@ -122,7 +122,7 @@
 
     <Button
         android:id="@+id/rates"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:text="@string/rate_me"
@@ -142,7 +142,7 @@
 
     <Button
         android:id="@+id/jokes"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:text="@string/jokes"
@@ -162,7 +162,7 @@
 
     <Button
         android:id="@+id/proof2"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:text="@string/proof"

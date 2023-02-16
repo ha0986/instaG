@@ -4,21 +4,33 @@
     package="com.hanif.likeefollow">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tikfollow"
         tools:targetApi="31">
         <activity
+            android:name=".Download"
+            android:exported="false" />
+        <activity
             android:name=".splash"
-            android:theme="@style/CustomSplashTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/CustomSplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -71,9 +83,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9422110628550448~1885931421"/>
+            android:value="ca-app-pub-9422110628550448~1885931421" />
     </application>
 
 </manifest>

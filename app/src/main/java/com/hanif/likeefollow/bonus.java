@@ -61,6 +61,9 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
 
+
+
+
         getDatas();
         autoLoad.loadInter(this);
         loadReward();
@@ -70,6 +73,20 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+
+
+
+
+
+
+
+
+
+        back.setOnClickListener(v -> {
+            autoLoad.showInter(this);
+            Intent myIntent = new Intent(bonus.this,doTask.class);
+            startActivity(myIntent);
+        });
     }
 
 
@@ -110,11 +127,6 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 tag = "8";
                 claimedButton = findViewById(R.id.button8);
                 break;
-            case R.id.backs:
-                autoLoad.showInter(this);
-                Intent myIntent = new Intent(bonus.this,doTask.class);
-                startActivity(myIntent);
-                break;
         }
         btnText = (String) claimedButton.getText();
         check();
@@ -135,6 +147,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 R.id.button5,
                 R.id.button6,
                 R.id.button7,
+                R.id.button8,
         };
         for (int i = 0; i < next - 1; i++) {
             Button button = findViewById(BUTTON_IDS[i]);
