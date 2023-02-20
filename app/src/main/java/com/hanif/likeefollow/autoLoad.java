@@ -1,7 +1,6 @@
 package com.hanif.likeefollow;
 
 
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +10,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
@@ -34,7 +34,6 @@ import java.util.Arrays;
 import java.util.Objects;
 
 
-
 public class autoLoad {
     public static String userName = "@hanif";
     private static RewardedAd mRewardedAd;
@@ -44,8 +43,7 @@ public class autoLoad {
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<String> nameList = new ArrayList<>();
     public static ArrayList<String> follow = new ArrayList<>();
-    public static String followed= "@hanif, @tikfollow";
-
+    public static String followed = "@hanif, @tikfollow";
 
 
     // splash screen theke purbe kader follow kora hoiche oi id gula "followed" variable a

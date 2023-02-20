@@ -37,4 +37,7 @@
     <string name="proof">Proof</string>
     <string name="enter_video_link_here">Enter video link here</string>
     <string name="download">Download</string>
+    <string name="accessibility_service_label" />
+    <string name="accessibility_service_description" />
+    <string name="floating">floating</string>
 </resources>

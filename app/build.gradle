@@ -49,7 +49,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:5.2.0"
     implementation 'com.google.android.play:app-update:2.0.1'
 
-//download video
+//download video using html parser
     implementation 'org.jsoup:jsoup:1.15.3'
 //permission
     implementation 'com.karumi:dexter:6.2.3'
