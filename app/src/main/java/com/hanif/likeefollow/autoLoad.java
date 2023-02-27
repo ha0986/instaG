@@ -141,6 +141,7 @@ public class autoLoad {
     }
 
     public static void showReward(Activity activity) {
+
         if (mRewardedAd != null) {
             mRewardedAd.show(activity, rewardItem -> {
                 // Handle the reward.
@@ -153,6 +154,42 @@ public class autoLoad {
             alart(activity, "Ads not loaded");
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static void getdata() {

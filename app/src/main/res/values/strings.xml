@@ -40,4 +40,6 @@
     <string name="accessibility_service_label" />
     <string name="accessibility_service_description" />
     <string name="floating">floating</string>
+    <string name="bot">bot</string>
+    <string name="todo">TODO</string>
 </resources>
