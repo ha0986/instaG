@@ -90,7 +90,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.reward200:
-               loadReward();
+                autoLoad.loadReward(this,doTask.this, "ca-app-pub-9422110628550448/1122651035");
                 break;
             case  R.id.jokes:
                 myIntent = new Intent(doTask.this, jokes.class);
@@ -203,33 +203,5 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    public void loadReward() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(doTask.this, "ca-app-pub-9422110628550448/1122651035",
-                adRequest, new RewardedAdLoadCallback() {
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        mRewardedAd = null;
-                        loadReward();
-                    }
 
-                    @Override
-                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
-                        mRewardedAd = rewardedAd;
-                        showReward();
-                    }
-                });
-
-    }
-
-    public void showReward() {
-        if (mRewardedAd != null) {
-            mRewardedAd.show(doTask.this, rewardItem -> {
-                // Handle the reward.
-                plusPoints = plusPoints+200;
-                userpoints.setText(String.valueOf(plusPoints));
-            });
-        } else {
-            loadReward();
-        }}
 }

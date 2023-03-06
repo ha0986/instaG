@@ -124,35 +124,6 @@ public class autoLoad {
 
 
 
-
-    private static void loadReward(Context context, String id) {
-        if (mRewardedAd == null) {
-            isLoading = true;
-            AdRequest adRequest = new AdRequest.Builder().build();
-            RewardedAd.load(context, id, adRequest,
-                    new RewardedAdLoadCallback() {
-                        @Override
-                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-
-                            mRewardedAd = null;
-                            isLoading = false;
-                            Toast.makeText(context, "onAdFailedToLoad", Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
-                            mRewardedAd = rewardedAd;
-                            isLoading = false;
-                            Toast.makeText(context, "onAdLoaded", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
-    }
-
-
-
-
-
     public static void showInter(Activity activity) {
         if (mInterstitialAd != null) {
             mInterstitialAd.show(activity);
@@ -164,10 +135,38 @@ public class autoLoad {
 
 
 
+    public static void loadReward(Context context,Activity activity, String id) {
+        if (mRewardedAd == null) {
+            isLoading = true;
+            AdRequest adRequest = new AdRequest.Builder().build();
+            RewardedAd.load(context, id, adRequest,
+                    new RewardedAdLoadCallback() {
+                        @Override
+                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+
+                            mRewardedAd = null;
+                            isLoading = false;
+                            Toast.makeText(context, "Ads failed to load try again later", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                            mRewardedAd = rewardedAd;
+                            isLoading = false;
+                            showReward(context,activity,id);
+                        }
+                    });
+        }else {
+            showReward(context,activity, id);
+        }
+    }
 
 
 
-    private static void showReward(Activity activity, Context context, String id) {
+
+
+
+    public static void showReward(Context context,Activity activity, String id) {
 
         if (mRewardedAd == null) {
             Log.d("TAG", "The rewarded ad wasn't ready yet.");
@@ -183,34 +182,35 @@ public class autoLoad {
                                 .show();
                     }
 
+
                     @Override
-                    public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        // Called when ad fails to show.
-                        Log.d("TAG", "onAdFailedToShowFullScreenContent");
-                        // Don't forget to set the ad reference to null so you
-                        // don't show the ad a second time.
+                    public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                         mRewardedAd = null;
-                        Toast.makeText(activity, "onAdFailedToShowFullScreenContent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, "Ads Failed", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onAdDismissedFullScreenContent() {
-                        // Called when ad is dismissed.
-                        // Don't forget to set the ad reference to null so you
-                        // don't show the ad a second time.
                         mRewardedAd = null;
                         Toast.makeText(activity, "onAdDismissedFullScreenContent", Toast.LENGTH_SHORT).show();
-                        loadReward(context, id);
+                        loadReward(context, activity, id);
                     }
                 });
         mRewardedAd.show(
                 activity,
                 rewardItem -> {
                     // Handle the reward.
-                    Log.d("TAG", "The user earned the reward.");
+                    Log.d("TAG", "You got reward.");
                     int rewardAmount = rewardItem.getAmount();
-                    String rewardType = rewardItem.getType();
+                    if (rewardAmount== 1){
+                        // have to start the bot. because add shown from the task page
+                    } else if (rewardAmount==2) {
+                        //have to store id for bonus the user
+                    }else {
+                        // set points
+                    }
                 });
+
     }
 
 
