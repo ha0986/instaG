@@ -6,7 +6,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -15,15 +17,19 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
+import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.firebase.database.DatabaseReference;
@@ -44,6 +50,7 @@ public class autoLoad {
     public static ArrayList<String> nameList = new ArrayList<>();
     public static ArrayList<String> follow = new ArrayList<>();
     public static String followed = "@hanif, @tikfollow";
+    static boolean isLoading;
 
 
     // splash screen theke purbe kader follow kora hoiche oi id gula "followed" variable a
@@ -115,22 +122,36 @@ public class autoLoad {
                 });
     }
 
-    public static void loadReward(Context context, String id) {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(context, id,
-                adRequest, new RewardedAdLoadCallback() {
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        mRewardedAd = null;
-                    }
 
-                    @Override
-                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
-                        mRewardedAd = rewardedAd;
-                    }
-                });
 
+
+    private static void loadReward(Context context, String id) {
+        if (mRewardedAd == null) {
+            isLoading = true;
+            AdRequest adRequest = new AdRequest.Builder().build();
+            RewardedAd.load(context, id, adRequest,
+                    new RewardedAdLoadCallback() {
+                        @Override
+                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+
+                            mRewardedAd = null;
+                            isLoading = false;
+                            Toast.makeText(context, "onAdFailedToLoad", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                            mRewardedAd = rewardedAd;
+                            isLoading = false;
+                            Toast.makeText(context, "onAdLoaded", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
     }
+
+
+
+
 
     public static void showInter(Activity activity) {
         if (mInterstitialAd != null) {
@@ -140,23 +161,57 @@ public class autoLoad {
         }
     }
 
-    public static void showReward(Activity activity) {
 
-        if (mRewardedAd != null) {
-            mRewardedAd.show(activity, rewardItem -> {
-                // Handle the reward.
-                int rewardAmount = rewardItem.getAmount();
-                points = String.valueOf(Integer.parseInt(points) + rewardAmount);
-                profile.points.setText(points);
-                String rewardType = rewardItem.getType();
-            });
-        } else {
-            alart(activity, "Ads not loaded");
+
+
+
+
+
+    private static void showReward(Activity activity, Context context, String id) {
+
+        if (mRewardedAd == null) {
+            Log.d("TAG", "The rewarded ad wasn't ready yet.");
+            return;
         }
+
+        mRewardedAd.setFullScreenContentCallback(
+                new FullScreenContentCallback() {
+                    @Override
+                    public void onAdShowedFullScreenContent() {
+
+                        Toast.makeText(activity, "onAdShowedFullScreenContent", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+
+                    @Override
+                    public void onAdFailedToShowFullScreenContent(AdError adError) {
+                        // Called when ad fails to show.
+                        Log.d("TAG", "onAdFailedToShowFullScreenContent");
+                        // Don't forget to set the ad reference to null so you
+                        // don't show the ad a second time.
+                        mRewardedAd = null;
+                        Toast.makeText(activity, "onAdFailedToShowFullScreenContent", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onAdDismissedFullScreenContent() {
+                        // Called when ad is dismissed.
+                        // Don't forget to set the ad reference to null so you
+                        // don't show the ad a second time.
+                        mRewardedAd = null;
+                        Toast.makeText(activity, "onAdDismissedFullScreenContent", Toast.LENGTH_SHORT).show();
+                        loadReward(context, id);
+                    }
+                });
+        mRewardedAd.show(
+                activity,
+                rewardItem -> {
+                    // Handle the reward.
+                    Log.d("TAG", "The user earned the reward.");
+                    int rewardAmount = rewardItem.getAmount();
+                    String rewardType = rewardItem.getType();
+                });
     }
-
-
-
 
 
 
