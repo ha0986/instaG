@@ -79,23 +79,6 @@
         app:layout_constraintVertical_bias="0.765" />
 
     <Button
-        android:id="@+id/bonusBtn"
-        android:layout_width="304dp"
-        android:layout_height="174dp"
-        android:background="#00FFFFFF"
-        android:gravity="bottom|center_horizontal"
-        android:text="@string/click_to_claim_bonus"
-        android:textAlignment="gravity"
-        android:textColor="#00FEFE"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.379" />
-
-    <Button
         android:id="@+id/rates"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -137,7 +120,7 @@
 
     <Button
         android:id="@+id/follow"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:text="@string/_1_follow"
@@ -152,6 +135,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.604"
+        app:strokeColor="#01F2F2"
+        app:strokeWidth="2.5sp" />
+
+    <Button
+        android:id="@+id/reward200"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:text="@string/robot"
+        android:textAllCaps="false"
+        android:textColor="#00FDFD"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.603"
         app:strokeColor="#01F2F2"
         app:strokeWidth="2.5sp" />
 
@@ -194,19 +197,5 @@
         app:layout_constraintVertical_bias="0.04"
         app:strokeColor="#01F2F2"
         app:strokeWidth="2.5sp" />
-
-    <ImageButton
-        android:id="@+id/reward200"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/bot"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603"
-        app:srcCompat="@drawable/feelings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

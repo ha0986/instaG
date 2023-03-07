@@ -3,64 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="105dp"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF">
+    android:layout_height="wrap_content"
+    android:backgroundTint="#00FFFFFF">
 
-    <!--Root container-->
-    <RelativeLayout
-        android:id="@+id/root_container"
-        android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:backgroundTint="#00FFFFFF"
-        android:gravity="center"
-        tools:ignore="UselessParent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/move"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10sp">
 
-        <!--View while view is collapsed-->
-        <RelativeLayout
-            android:id="@+id/collapse_view"
+        <LinearLayout
+            android:id="@+id/liniar"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:backgroundTint="#00FFFFFF"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="visible">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="10sp"
+            tools:ignore="RtlSymmetry">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+            <Button
+                android:id="@+id/exitApp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/exit"
+                app:cornerRadius="60dp" />
+
+            <TextView
+                android:id="@+id/dollar"
                 android:layout_width="match_parent"
-                android:layout_height="105dp">
+                android:layout_height="wrap_content"
+                android:text="00000"
+                android:textAlignment="center"
+                android:textColor="#E91E63"
+                android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="392dp"
-                    android:layout_height="102dp"
-                    android:contentDescription="@string/floating"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/floating" />
+        </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/close_btn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/home"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.997"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:ignore="ContentDescription" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!--Close button-->
-        </RelativeLayout>
-
-
-    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </FrameLayout>

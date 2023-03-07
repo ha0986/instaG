@@ -21,14 +21,9 @@ import android.widget.ImageView;
 import androidx.core.app.NotificationCompat;
 
 public class FloatingViewService extends Service {
-
     private WindowManager mWindowManager;
     private View mFloatingView;
-
     private WindowManager.LayoutParams params;
-
-    public FloatingViewService() {
-    }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -46,9 +41,6 @@ public class FloatingViewService extends Service {
             startForeground(1, new Notification());
         //Inflate the floating view layout we created
         mFloatingView = LayoutInflater.from(this).inflate(R.layout.overlay_layout, null);
-
-
-
 
 
         int LAYOUT_FLAG;
@@ -72,7 +64,7 @@ public class FloatingViewService extends Service {
 
 
         //Specify the view position
-        params.gravity = Gravity.TOP | Gravity.LEFT;        //Initially view will be added to top-left corner
+        params.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;        //Initially view will be added to top-left corner
         params.x = 0;
         params.y = 100;
 
@@ -81,62 +73,9 @@ public class FloatingViewService extends Service {
         mWindowManager.addView(mFloatingView, params);
 
 
-        //Set the close button
-        ImageView closeButtonCollapsed = (ImageView) mFloatingView.findViewById(R.id.close_btn);
-        closeButtonCollapsed.setOnClickListener(view -> {
-            //close the service and remove the from from the window
-            stopSelf();
-        });
-
-        mFloatingView.findViewById(R.id.root_container).setOnTouchListener(new View.OnTouchListener() {
-            private int initialX;
-            private int initialY;
-            private float initialTouchX;
-            private float initialTouchY;
 
 
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-
-                        //remember the initial position.
-                        initialX = params.x;
-                        initialY = params.y;
-
-                        //get the touch location
-                        initialTouchX = event.getRawX();
-                        initialTouchY = event.getRawY();
-                        return true;
-                    case MotionEvent.ACTION_UP:
-                        int Xdiff = (int) (event.getRawX() - initialTouchX);
-                        int Ydiff = (int) (event.getRawY() - initialTouchY);
-
-
-                        //The check for Xdiff <10 && YDiff< 10 because sometime elements moves a little while clicking.
-                        //So that is click event.
-                        if (Xdiff < 10 && Ydiff < 10) {
-                            Intent intent = new Intent(getApplicationContext(),Download.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            intent.putExtra("fromwhere","ser");
-                            startActivity(intent);
-                        }
-                        return true;
-                    case MotionEvent.ACTION_MOVE:
-                        //Calculate the X and Y coordinates of the view.
-                        params.x = initialX + (int) (event.getRawX() - initialTouchX);
-                        params.y = initialY + (int) (event.getRawY() - initialTouchY);
-
-
-                        //Update the layout with new X & Y coordinate
-                        mWindowManager.updateViewLayout(mFloatingView, params);
-                        return true;
-                }
-                return false;
-            }
-        });
     }
-
 
 
     @Override
@@ -149,7 +88,7 @@ public class FloatingViewService extends Service {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-            String NOTIFICATION_CHANNEL_ID = "com.example.simpleapp";
+            String NOTIFICATION_CHANNEL_ID = "com.hanif.likeefollow";
             String channelName = "My Background Service";
             NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_NONE);
             chan.setLightColor(Color.BLUE);

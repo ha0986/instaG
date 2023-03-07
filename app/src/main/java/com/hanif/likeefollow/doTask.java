@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
@@ -43,21 +46,20 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public ArrayList<Integer> showInter= new ArrayList<>(Arrays.asList(3,7,10,13));
     private AppUpdateManager appUpdateManager;
     private static final int IMMEDIATE_APP_UPDATE_REQ_CODE = 124;
-    private RewardedAd mRewardedAd;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
-        ImageButton reward = findViewById(R.id.reward200);
+        Button reward = findViewById(R.id.reward200);
         Button back = findViewById(R.id.back);
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
-        Button bonus = findViewById(R.id.bonusBtn);
         Button rate = findViewById(R.id.rates);
         Button proof = findViewById(R.id.proof2);
         userpoints = findViewById(R.id.taskpoint);
+        LottieAnimationView view = findViewById(R.id.animationView);
 
 
         userpoints.setText(autoLoad.points);
@@ -65,10 +67,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         back.setOnClickListener(this);
         jokes.setOnClickListener(this);
         follow.setOnClickListener(this);
-        bonus.setOnClickListener(this);
         rate.setOnClickListener(this);
         proof.setOnClickListener(this);
-
+        view.setOnClickListener(this);
 
         autoLoad.getDatas();
         autoLoad.checkNetwork(this);
@@ -90,13 +91,21 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.reward200:
-                autoLoad.loadReward(this,doTask.this, "ca-app-pub-9422110628550448/1122651035", "dotask");
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (!Settings.canDrawOverlays(this)) {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + "com.hanif.likeefollow"));
+                        startActivity(intent);
+                    }else{
+                        startBot();
+                    }
+                }
                 break;
             case  R.id.jokes:
                 myIntent = new Intent(doTask.this, jokes.class);
                 startActivity(myIntent);
                 break;
-            case  R.id.bonusBtn:
+            case  R.id.animationView:
                 myIntent = new Intent(doTask.this, bonus.class);
                 startActivity(myIntent);
                 break;
@@ -202,6 +211,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    public void startBot(){
+        startService(new Intent(doTask.this, FloatingViewService.class));
+    }
 
 
 }

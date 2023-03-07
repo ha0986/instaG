@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import java.util.Objects;
 
 public class login extends AppCompatActivity {
@@ -19,7 +21,6 @@ public class login extends AppCompatActivity {
         Button gues = findViewById(R.id.gp);
         EditText text = findViewById(R.id.editTextTextPersonName3);
         String check = getIntent().getStringExtra("change");
-
 
 
 

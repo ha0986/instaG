@@ -55,7 +55,7 @@ public class Download extends AppCompatActivity {
 
         download.setOnClickListener(v -> {
 
-            startService(new Intent(Download.this, FloatingViewService.class));
+
 //            String url = String.valueOf(link.getText());
 //            if (url.contains("https://")) {
 //                new callFbData().execute(url);

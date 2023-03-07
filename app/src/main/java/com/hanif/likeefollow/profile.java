@@ -15,7 +15,9 @@ import android.widget.TextView;
 public class profile extends AppCompatActivity implements View.OnClickListener {
 
     public Intent myIntent;
-    public static TextView points;
+    public TextView points;
+
+    public static int dollar;
 
 
 
@@ -106,7 +108,8 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         exit();
     }
 
+    public static int getDollar() {
+        return dollar;
 
-
-
+    }
 }
