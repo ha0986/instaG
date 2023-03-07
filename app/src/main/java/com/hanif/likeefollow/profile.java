@@ -18,6 +18,8 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     public static TextView points;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +74,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 startActivity(myIntent);
                 break;
             case R.id.reward:
-                autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/5693330404");
+                autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/5693330404", "profile");
                 break;
             case R.id.exit:
                 exit();

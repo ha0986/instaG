@@ -65,13 +65,12 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
         getDatas();
-        autoLoad.loadInter(this);
-        loadReward();
-
-
-        AdView mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        autoLoad.loadInter(this);
+//
+//
+//        AdView mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
 
 
@@ -177,7 +176,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("TikLikes")
                 .setMessage("Watch add to claim this offer")
-                .setPositiveButton("OK", (dialog, which) -> showReward())
+                .setPositiveButton("OK", (dialog, which) -> autoLoad.loadReward(this, bonus.this,"ca-app-pub-9422110628550448/1593892548","bonus"))
                 .setNegativeButton("No", null)
                 .show();
 
@@ -221,36 +220,6 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         autoLoad.showInter(this);
         Intent myIntent = new Intent(bonus.this,doTask.class);
         startActivity(myIntent);
-    }
-
-
-    public void loadReward() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(bonus.this, "ca-app-pub-9422110628550448/1593892548",
-                adRequest, new RewardedAdLoadCallback() {
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        mRewardedAd = null;
-                        loadReward();
-                    }
-
-                    @Override
-                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
-                        mRewardedAd = rewardedAd;
-                    }
-                });
-
-    }
-
-    public void showReward() {
-        if (mRewardedAd != null) {
-            mRewardedAd.show(bonus.this, rewardItem -> {
-                // Handle the reward.
-                claim();
-            });
-        } else {
-            loadReward();
-        }
     }
 
 }

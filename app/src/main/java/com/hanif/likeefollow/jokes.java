@@ -43,9 +43,9 @@ public class jokes extends AppCompatActivity {
 
 
         getJokes();
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         next.setOnClickListener(v -> {
             if(count<size-1){

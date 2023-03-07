@@ -72,13 +72,13 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
         autoLoad.getDatas();
         autoLoad.checkNetwork(this);
-        autoLoad.loadInter(this);
 
 
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        autoLoad.loadInter(this);
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
 
         appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
@@ -90,7 +90,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.reward200:
-                autoLoad.loadReward(this,doTask.this, "ca-app-pub-9422110628550448/1122651035");
+                autoLoad.loadReward(this,doTask.this, "ca-app-pub-9422110628550448/1122651035", "dotask");
                 break;
             case  R.id.jokes:
                 myIntent = new Intent(doTask.this, jokes.class);

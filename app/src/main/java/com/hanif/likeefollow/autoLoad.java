@@ -135,7 +135,7 @@ public class autoLoad {
 
 
 
-    public static void loadReward(Context context,Activity activity, String id) {
+    public static void loadReward(Context context,Activity activity, String id, String screen) {
         if (mRewardedAd == null) {
             isLoading = true;
             AdRequest adRequest = new AdRequest.Builder().build();
@@ -153,11 +153,11 @@ public class autoLoad {
                         public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                             mRewardedAd = rewardedAd;
                             isLoading = false;
-                            showReward(context,activity,id);
+                            showReward(context,activity,id,screen);
                         }
                     });
         }else {
-            showReward(context,activity, id);
+            showReward(context,activity, id,screen);
         }
     }
 
@@ -166,7 +166,7 @@ public class autoLoad {
 
 
 
-    public static void showReward(Context context,Activity activity, String id) {
+    public static void showReward(Context context,Activity activity, String id, String screen) {
 
         if (mRewardedAd == null) {
             Log.d("TAG", "The rewarded ad wasn't ready yet.");
@@ -193,7 +193,7 @@ public class autoLoad {
                     public void onAdDismissedFullScreenContent() {
                         mRewardedAd = null;
                         Toast.makeText(activity, "onAdDismissedFullScreenContent", Toast.LENGTH_SHORT).show();
-                        loadReward(context, activity, id);
+                        loadReward(context, activity, id,screen);
                     }
                 });
         mRewardedAd.show(
@@ -202,9 +202,9 @@ public class autoLoad {
                     // Handle the reward.
                     Log.d("TAG", "You got reward.");
                     int rewardAmount = rewardItem.getAmount();
-                    if (rewardAmount== 1){
+                    if (screen== "dotask"){
                         // have to start the bot. because add shown from the task page
-                    } else if (rewardAmount==2) {
+                    } else if (screen=="bonus") {
                         //have to store id for bonus the user
                     }else {
                         // set points
