@@ -3,43 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:backgroundTint="#00FFFFFF">
+    android:layout_height="105dp"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/move"
-        android:layout_width="300dp"
+        android:id="@+id/liniar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="false"
+        app:cardBackgroundColor="#191C26"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10sp">
+        app:contentPadding="5dp">
 
-        <LinearLayout
-            android:id="@+id/liniar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingStart="10sp"
-            tools:ignore="RtlSymmetry">
+        <Button
+            android:id="@+id/proof2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:text="@string/exit"
+            android:textAllCaps="false"
+            android:textColor="#00FDFD"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.94"
+            app:strokeColor="#01F2F2"
+            app:strokeWidth="2.5sp" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Points:  "
+            android:textColor="#00FDFD"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/exitApp"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/exit"
-                app:cornerRadius="60dp" />
-
-            <TextView
-                android:id="@+id/dollar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="00000"
-                android:textAlignment="center"
-                android:textColor="#E91E63"
-                android:textSize="20sp" />
-
-        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 </FrameLayout>

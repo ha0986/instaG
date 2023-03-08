@@ -63,7 +63,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
 
             case R.id.rate:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hanif.likeefollow"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
                 startActivity(browserIntent);
                 break;
             case R.id.edit:

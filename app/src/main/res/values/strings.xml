@@ -45,4 +45,5 @@
     <string name="how_to_use">How to use</string>
     <string name="exit">Exit</string>
     <string name="robot">Robot</string>
+    <string name="poi">Points: </string>
 </resources>
