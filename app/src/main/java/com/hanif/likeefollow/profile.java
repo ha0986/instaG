@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class profile extends AppCompatActivity implements View.OnClickListener {
 
     public Intent myIntent;
-    public TextView points;
+    public static TextView points;
 
     public static int dollar;
 
@@ -63,8 +63,8 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
 
             case R.id.rate:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
-                startActivity(browserIntent);
+//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
+//                startActivity(browserIntent);
                 break;
             case R.id.edit:
                 Intent i = new Intent(profile.this, login.class);
@@ -76,6 +76,9 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 startActivity(myIntent);
                 break;
             case R.id.reward:
+                // test ca-app-pub-3940256099942544/5224354917
+                // main  ca-app-pub-9422110628550448/5693330404
+
                 autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/5693330404", "profile");
                 break;
             case R.id.exit:
@@ -93,7 +96,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     public void exit(){
         new AlertDialog.Builder(profile.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Likee Likes")
+                .setTitle("Instagram Follower")
                 .setMessage("Are you sure you want to Exit?")
                 .setPositiveButton("Yes", (dialog, which) -> {
                     moveTaskToBack(true);
@@ -102,14 +105,15 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 .setNegativeButton("No", null)
                 .show();
 
+
     }
 
     public void onBackPressed() {
         exit();
     }
 
-    public static int getDollar() {
-        return dollar;
 
+    public static void update(){
+        points.setText(autoLoad.points);
     }
 }

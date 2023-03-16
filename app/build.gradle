@@ -10,8 +10,8 @@ android {
         applicationId "com.hanif.likeefollow"
         minSdk 21
         targetSdk 33
-        versionCode 7
-        versionName "0.7"
+        versionCode 9
+        versionName "0.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

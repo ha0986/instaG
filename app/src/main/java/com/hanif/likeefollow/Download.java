@@ -56,12 +56,7 @@ public class Download extends AppCompatActivity {
         download.setOnClickListener(v -> {
 
 
-//            String url = String.valueOf(link.getText());
-//            if (url.contains("https://")) {
-//                new callFbData().execute(url);
-//            } else {
-//                Toast.makeText(Download.this, "Enter a valid Url", Toast.LENGTH_SHORT).show();
-//            }
+
         });
 
 

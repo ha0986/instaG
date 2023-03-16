@@ -1,14 +1,12 @@
 package com.hanif.likeefollow;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.airbnb.lottie.LottieAnimationView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
@@ -33,10 +31,21 @@ public class login extends AppCompatActivity {
                 if (Objects.equals(check, "true")) {
                     autoLoad.removedata(autoLoad.userName);
                 }
-                if (inputs.startsWith("https://l.likee")){
-                    String[] spli = inputs.split("https://l.likee.video/");
-                    autoLoad.savedata(spli[1].replace("/","*"));
-                    save(spli[1].replace("/","*"));
+                if (inputs.startsWith("https://instagram.com/")){
+                    String[] spli = inputs.split("https://instagram.com/");
+                    String[] spl = spli[1].split("igshid=");
+
+
+
+                    if (spl[0].contains(".")){
+                        spl[0] = spl[0].replace(".","*");
+                    }else if (spl[0].contains("/")){
+                        spl[0] = spl[0].replace("/","`");
+                    }else if (spl[0].contains("$")){
+                        spl[0] = spl[0].replace("$","~");
+                    }
+                    autoLoad.savedata(spl[0]);
+                    save(spl[0]);
                 }else {
                     autoLoad.alart(login.this, "Url not correct");
                 }
@@ -52,6 +61,7 @@ public class login extends AppCompatActivity {
 
     public void save(String userName){
         autoLoad.userName = userName;
+        Log.d("name",autoLoad.userName);
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("name", userName);

@@ -42,7 +42,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public String minusUser;
     public Integer minusPoint=500;
     public static Integer plusPoints=500;
-    public Integer click=1;
+    public Integer click=0;
     public ArrayList<Integer> showInter= new ArrayList<>(Arrays.asList(3,7,10,13));
     private AppUpdateManager appUpdateManager;
     private static final int IMMEDIATE_APP_UPDATE_REQ_CODE = 124;
@@ -76,10 +76,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
 
 
-//        autoLoad.loadInter(this);
-//        mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
@@ -92,15 +91,14 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.reward200:
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (!Settings.canDrawOverlays(this)) {
-                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" +getPackageName()));
-                        startActivity(intent);
-                    }else{
-                        startBot();
-                    }
-                }
+//test      ca-app-pub-3940256099942544/5224354917
+//  main    ca-app-pub-9422110628550448/1122651035
+
+
+                autoLoad.loadReward(this, doTask.this, "ca-app-pub-9422110628550448/1122651035", "doTask");
                 break;
+
+
             case  R.id.jokes:
                 myIntent = new Intent(doTask.this, jokes.class);
                 startActivity(myIntent);
@@ -118,8 +116,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
                 startActivity(myIntent);
                 break;
             case R.id.rates:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
-                startActivity(browserIntent);
+//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
+//                startActivity(browserIntent);
                 break;
             case R.id.follow:
                 startTask();
@@ -145,9 +143,17 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
             autoLoad.showInter(this);
         }
         minusUser=minusUser.trim();
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://l.likee.video/"+ minusUser.replace("*","/")));
+        if (minusUser.contains("*")){
+            minusUser = minusUser.replace("*",".");
+        }else if (minusUser.contains("`")){
+            minusUser = minusUser.replace("`","/");
+        }else if (minusUser.contains("~")){
+            minusUser = minusUser.replace("~","$");
+        }
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/"+ minusUser));
         startActivity(intent);
     }
+
 
 
 
@@ -163,7 +169,6 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Intent myIntent = new Intent(doTask.this, profile.class);
         startActivity(myIntent);
     }
-
 
 
 
@@ -211,9 +216,10 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public void startBot(){
-        startService(new Intent(doTask.this, FloatingViewService.class));
-    }
 
+
+    public static void updatePoint(){
+        userpoints.setText(autoLoad.points);
+    }
 
 }

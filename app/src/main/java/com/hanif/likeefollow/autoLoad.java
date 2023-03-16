@@ -2,16 +2,8 @@ package com.hanif.likeefollow;
 
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AppOpsManager;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
@@ -40,22 +32,20 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 
 public class autoLoad {
-    public static String userName = "@hanif";
-    private static RewardedAd mRewardedAd;
+    public static String userName = "@hanif", points = "500", followed = "@hanif, @tikfollow" ;
+    static RewardedAd mRewardedAd;
     private static InterstitialAd mInterstitialAd;
     public static boolean connection = false;
-    public static String points = "500"; //userPoints
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<String> nameList = new ArrayList<>();
     public static ArrayList<String> follow = new ArrayList<>();
-    public static String followed = "@hanif, @tikfollow";
-    static boolean isLoading;
+    static boolean isLoading, isRewarded = false, RewardShowing = false;
 
 
     // splash screen theke purbe kader follow kora hoiche oi id gula "followed" variable a
@@ -70,7 +60,7 @@ public class autoLoad {
 
     public static void alart(Context context, String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Likee Likes");
+        builder.setTitle("Likeer Instagram");
         builder.setMessage(text);
         AlertDialog alert = builder.create();
         alert.show();
@@ -108,23 +98,28 @@ public class autoLoad {
         });
     }
 
-    public static void loadInter(Context context) {
+    public static void loadInter(Context context, Activity activity) {
+        if (mInterstitialAd== null){
+            AdRequest loadInter = new AdRequest.Builder().build();
 
-        AdRequest loadInter = new AdRequest.Builder().build();
+            InterstitialAd.load(context, "ca-app-pub-9422110628550448/4571820425", loadInter,
+                    new InterstitialAdLoadCallback() {
+                        @Override
+                        public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                            mInterstitialAd = interstitialAd;
+                        }
 
-        InterstitialAd.load(context, "ca-app-pub-9422110628550448/4571820425", loadInter,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        mInterstitialAd = interstitialAd;
-                    }
+                        @Override
+                        public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                            // Handle the error
+                            mInterstitialAd = null;
+                        }
+                    });
+        }else {
+            showInter(activity);
+        }
 
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        mInterstitialAd = null;
-                    }
-                });
+
     }
 
 
@@ -158,15 +153,15 @@ public class autoLoad {
                         public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                             mRewardedAd = rewardedAd;
                             isLoading = false;
-                            showReward(context,activity,id,screen);
+                            showReward(context, activity, id, screen);
                         }
+
                     });
         }else {
-            showReward(context,activity, id,screen);
+            showReward(context, activity, id, screen);
         }
+
     }
-
-
 
 
 
@@ -182,37 +177,45 @@ public class autoLoad {
                 new FullScreenContentCallback() {
                     @Override
                     public void onAdShowedFullScreenContent() {
-
-                        Toast.makeText(activity, "onAdShowedFullScreenContent", Toast.LENGTH_SHORT)
-                                .show();
+                        RewardShowing = true;
                     }
 
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                         mRewardedAd = null;
-                        Toast.makeText(activity, "Ads Failed", Toast.LENGTH_SHORT).show();
+
                     }
 
                     @Override
                     public void onAdDismissedFullScreenContent() {
                         mRewardedAd = null;
-                        Toast.makeText(activity, "onAdDismissedFullScreenContent", Toast.LENGTH_SHORT).show();
-                        loadReward(context, activity, id,screen);
+                        if(screen == "bonus"){
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                            builder.setTitle("Likeer insta");
+                            builder.setMessage("You will get your offer within a day. Please keep patience");
+                            AlertDialog alert = builder.create();
+                            alert.show();
+                        }
+                        RewardShowing = false;
                     }
                 });
+
         mRewardedAd.show(
                 activity,
                 rewardItem -> {
-                    // Handle the reward.
-                    Log.d("TAG", "You got reward.");
                     int rewardAmount = rewardItem.getAmount();
-                    if (screen== "dotask"){
-                        // have to start the bot. because add shown from the task page
-                    } else if (screen=="bonus") {
-                        //have to store id for bonus the user
+                    if (Objects.equals(screen, "doTask")){
+                        points = String.valueOf(Integer.parseInt(points)+rewardAmount);
+                        doTask.updatePoint();
+                        savedata(userName);
+
+                    } else if (Objects.equals(screen, "profile")) {
+                        points = String.valueOf(Integer.parseInt(points)+rewardAmount);
+                        profile.update();
+                        savedata(userName);
                     }else {
-                        // set points
+                        isRewarded = true;
                     }
                 });
 
@@ -250,7 +253,7 @@ public class autoLoad {
 
     public static void getdata() {
 
-        DatabaseReference myRef = database.getReference("tikfan");
+        DatabaseReference myRef = database.getReference("instafan");
 
 
         myRef.child(userName).get().addOnCompleteListener(task -> {
@@ -266,7 +269,7 @@ public class autoLoad {
     }
 
     public static void getDatas() {
-        DatabaseReference myRef = database.getReference("tikfan");
+        DatabaseReference myRef = database.getReference("instafan");
 
 
         myRef.get().addOnCompleteListener(task -> {
@@ -301,20 +304,20 @@ public class autoLoad {
     }
 
     public static void savedata(String userName) {
-        DatabaseReference myRef = database.getReference("tikfan");
+        DatabaseReference myRef = database.getReference("instafan");
         myRef.child(userName).setValue(Integer.valueOf(points));
     }
 
 
     public static void removedata(String userName) {
-        DatabaseReference myRef = database.getReference("tikfan");
+        DatabaseReference myRef = database.getReference("instafan");
         myRef.child(userName).removeValue();
 
     }
 
 
     public static void storePlusMinus(Integer pluspoints, String minusUser, Integer minusPoints) {
-        DatabaseReference myRef = database.getReference("tikfan");
+        DatabaseReference myRef = database.getReference("instafan");
         myRef.child(userName).setValue(pluspoints);
         myRef.child(minusUser).setValue(minusPoints);
     }

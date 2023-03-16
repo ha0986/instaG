@@ -32,8 +32,6 @@ public class jokes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokes);
-
-        autoLoad.loadInter(this);
         jokes = findViewById(R.id.textView2);
 
         Button next = findViewById(R.id.next);
@@ -43,9 +41,9 @@ public class jokes extends AppCompatActivity {
 
 
         getJokes();
-//        mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         next.setOnClickListener(v -> {
             if(count<size-1){
@@ -73,6 +71,7 @@ public class jokes extends AppCompatActivity {
             if (joke != null){
                 ClipData clip = ClipData.newPlainText("jokes",joke[count]);
                 clipboard.setPrimaryClip(clip);
+                autoLoad.loadInter(this, jokes.this);
             }
 
 

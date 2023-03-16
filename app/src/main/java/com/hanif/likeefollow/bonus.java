@@ -5,14 +5,21 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
@@ -35,6 +42,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public Button claimedButton;
     public String btnText;
     private RewardedAd mRewardedAd;
+    public boolean isRewarded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +73,10 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
         getDatas();
-//        autoLoad.loadInter(this);
-//
-//
-//        AdView mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
 
@@ -176,16 +182,19 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("TikLikes")
                 .setMessage("Watch add to claim this offer")
-                .setPositiveButton("OK", (dialog, which) -> autoLoad.loadReward(this, bonus.this,"ca-app-pub-9422110628550448/1593892548","bonus"))
+                .setPositiveButton("OK", (dialog, which) ->{
+                    autoLoad.loadReward(this, bonus.this,"ca-app-pub-9422110628550448/8678788991", "bonus");
+                    new Handler().postDelayed(() -> claim(), 20000);
+                })
                 .setNegativeButton("No", null)
                 .show();
+
 
     }
 
 
     @SuppressLint({"SetTextI18n", "ResourceAsColor"})
     public void claim() {
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Days");
         myRef.child(tag).child(autoLoad.userName).setValue(0);
@@ -201,15 +210,8 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         editor.apply();
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("TikLikes");
-        builder.setMessage("You will get your offer within a day. Please keep patience");
-        AlertDialog alert = builder.create();
-        alert.show();
-
-
         claimedButton.setText("claimed");
-        claimedButton.setBackgroundColor(R.color.teal_200);
+        claimedButton.setBackgroundColor(R.color.fav);
 
         Intent myIntent = new Intent(bonus.this,doTask.class);
         startActivity(myIntent);
@@ -221,5 +223,8 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         Intent myIntent = new Intent(bonus.this,doTask.class);
         startActivity(myIntent);
     }
+
+
+
 
 }
