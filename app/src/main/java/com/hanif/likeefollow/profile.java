@@ -12,12 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class profile extends AppCompatActivity implements View.OnClickListener {
+public class profile extends AppCompatActivity{
 
-    public Intent myIntent;
     public static TextView points;
-
-    public static int dollar;
 
 
 
@@ -31,66 +28,34 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         Button edit = findViewById(R.id.edit);
         Button task = findViewById(R.id.task);
         Button reward = findViewById(R.id.reward);
-        Button more = findViewById(R.id.more);
+        Button mores = findViewById(R.id.more);
         Button exit = findViewById(R.id.exit);
         points = findViewById(R.id.points);
         TextView username = findViewById(R.id.userName);
         Button jokesBtn = findViewById(R.id.jokesbtn);
 
 
-        rate.setOnClickListener(this);
-        edit.setOnClickListener(this);
-        task.setOnClickListener(this);
-        reward.setOnClickListener(this);
-        more.setOnClickListener(this);
-        exit.setOnClickListener(this);
+        rate.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()))));
+        jokesBtn.setOnClickListener(v -> startActivity(new Intent(profile.this, jokes.class)));
+        task.setOnClickListener(v -> startActivity(new Intent(profile.this, doTask.class)));
+        reward.setOnClickListener(v -> autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/5693330404", "profile"));
+        mores.setOnClickListener(v -> startActivity(new Intent(profile.this, more.class)));
+        exit.setOnClickListener(v -> exit());
 
         username.setText(autoLoad.userName);
         points.setText(autoLoad.points);
 
 
-        jokesBtn.setOnClickListener(v -> {
-            myIntent = new Intent(profile.this, jokes.class);
-            startActivity(myIntent);
+
+
+        edit.setOnClickListener(v -> {
+            Intent i = new Intent(profile.this, login.class);
+            i.putExtra("change","true");
+            startActivity(i);
         });
-
     }
 
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-
-            case R.id.rate:
-//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
-//                startActivity(browserIntent);
-                break;
-            case R.id.edit:
-                Intent i = new Intent(profile.this, login.class);
-                i.putExtra("change","true");
-                startActivity(i);
-                break;
-            case R.id.task:
-                myIntent = new Intent(profile.this, doTask.class);
-                startActivity(myIntent);
-                break;
-            case R.id.reward:
-                // test ca-app-pub-3940256099942544/5224354917
-                // main  ca-app-pub-9422110628550448/5693330404
-
-                autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/5693330404", "profile");
-                break;
-            case R.id.exit:
-                exit();
-                break;
-            case R.id.more:
-                myIntent = new Intent(profile.this, more.class);
-                startActivity(myIntent);
-                break;
-        }
-
-    }
 
 
     public void exit(){

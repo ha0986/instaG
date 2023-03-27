@@ -23,8 +23,7 @@ import java.util.Arrays;
 
 public class jokes extends AppCompatActivity {
     private AdView mAdView;
-    int count = 0;
-    int size = 1;
+    int count = 0,size=1;
     public ArrayList<Integer> showInter= new ArrayList<>(Arrays.asList(5,10,15,20,25,30,35));
     String[] joke;
     TextView jokes;
