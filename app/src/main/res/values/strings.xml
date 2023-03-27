@@ -46,4 +46,5 @@
     <string name="exit">Exit</string>
     <string name="robot">+200</string>
     <string name="poi">Points: </string>
+    <string name="try_other_apps">Try My apps</string>
 </resources>

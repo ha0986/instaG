@@ -136,7 +136,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:text="@string/_1_follow"
+        android:text="More Apps"
         android:textAllCaps="false"
         android:textColor="#00FDFD"
         android:textSize="16sp"

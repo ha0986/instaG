@@ -83,6 +83,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
         appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
         checkUpdate();
+
+
+
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -120,8 +123,10 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 //                startActivity(browserIntent);
                 break;
             case R.id.follow:
-                startTask();
-                click+=1;
+//                startTask();
+//                click+=1;
+                Intent intent = new Intent(doTask.this, more.class);
+                startActivity(intent);
                 break;
         }
     }

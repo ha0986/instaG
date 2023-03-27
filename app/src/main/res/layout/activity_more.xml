@@ -2,140 +2,171 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191C26"
     tools:context=".more">
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textViewss"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/a"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:text="@string/try_other_apps"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/more" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/close"
-        android:layout_width="67dp"
-        android:layout_height="69dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/points"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/gdelete"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/ap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/abc"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.768"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+            <Button
+                android:id="@+id/tiklikes"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Get Tiktok free likes and folowers"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/tiklikes"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-    <Button
-        android:id="@+id/word"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+            <Button
+                android:id="@+id/abc"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Let your king learn english alphabet easily"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/abc"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-    <Button
-        android:id="@+id/puzzle"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_n"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+            <Button
+                android:id="@+id/puzzle"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Earn and bost your brain by playing this game"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/puzzle"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-    <Button
-        android:id="@+id/tikfollow"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_nam"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+            <Button
+                android:id="@+id/word"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Earn money by playing games"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/word"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-    <Button
-        android:id="@+id/tiklikes"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+            <Button
+                android:id="@+id/tikfollow"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Exchange likes and follow on likee"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/tikfollow"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-    <Button
-        android:id="@+id/likee"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_names"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+            <Button
+                android:id="@+id/likee"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Get follow on Likee"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/likeer"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-    <Button
-        android:id="@+id/ludo"
-        android:layout_width="121dp"
-        android:layout_height="85dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/app_namesx"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+            <Button
+                android:id="@+id/ludo"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Enjoy most famous ludo game"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/ludo"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
+
+            <Button
+                android:id="@+id/instafollow"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Get free folowers on Instagram"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/instafollow"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
+
+
+            <Button
+                android:id="@+id/download"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Download video from Facebook, Insagram, Tiktok ,Likee"
+                android:textAllCaps="false"
+                android:textColor="#2B0000"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/download"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

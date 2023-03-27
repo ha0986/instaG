@@ -4,6 +4,10 @@ package com.hanif.likeefollow;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
@@ -34,6 +38,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -79,6 +84,15 @@ public class autoLoad {
         queue.add(stringRequest);
     }
 
+    public static boolean isPackageExisted(Context context){
+        final PackageManager packageManager = context.getPackageManager();
+        Intent intent = packageManager.getLaunchIntentForPackage("com.instagram.android");
+        if (intent == null) {
+            return false;
+        }else{
+            return true;
+        }
+    }
 
     public static void loadBanner(Context context, String gravity) {
         LinearLayout layout = new LinearLayout(context);
