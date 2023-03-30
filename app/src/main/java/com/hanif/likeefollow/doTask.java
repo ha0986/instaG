@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class doTask extends AppCompatActivity implements View.OnClickListener {
+public class doTask extends AppCompatActivity{
     public Intent myIntent;
     private AdView mAdView;
     public static TextView userpoints;
@@ -63,13 +63,21 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
 
         userpoints.setText(autoLoad.points);
-        reward.setOnClickListener(this);
-        back.setOnClickListener(this);
-        jokes.setOnClickListener(this);
-        follow.setOnClickListener(this);
-        rate.setOnClickListener(this);
-        proof.setOnClickListener(this);
-        view.setOnClickListener(this);
+
+
+
+        //test      ca-app-pub-3940256099942544/5224354917
+        //  main    ca-app-pub-9422110628550448/1122651035
+        reward.setOnClickListener(v->  autoLoad.loadReward(this, doTask.this, "ca-app-pub-9422110628550448/1122651035", "doTask"));
+        back.setOnClickListener(v-> startActivity(new Intent(doTask.this, profile.class)));
+        jokes.setOnClickListener(v-> startActivity(new Intent(doTask.this, jokes.class)));
+        follow.setOnClickListener(v->{
+            startTask();
+            click+=1;
+        });
+        rate.setOnClickListener(v->startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()))));
+        proof.setOnClickListener(v->startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/shorts/Ya74m-RaCZM?feature=share"))));
+        view.setOnClickListener(v-> startActivity(new Intent(doTask.this, bonus.class)));
 
         autoLoad.getDatas();
         autoLoad.checkNetwork(this);
@@ -86,49 +94,6 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
 
 
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.reward200:
-
-//test      ca-app-pub-3940256099942544/5224354917
-//  main    ca-app-pub-9422110628550448/1122651035
-
-
-                autoLoad.loadReward(this, doTask.this, "ca-app-pub-9422110628550448/1122651035", "doTask");
-                break;
-
-
-            case  R.id.jokes:
-                myIntent = new Intent(doTask.this, jokes.class);
-                startActivity(myIntent);
-                break;
-            case  R.id.animationView:
-                myIntent = new Intent(doTask.this, bonus.class);
-                startActivity(myIntent);
-                break;
-            case R.id.back:
-                myIntent = new Intent(doTask.this, profile.class);
-                startActivity(myIntent);
-                break;
-            case R.id.proof2:
-                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/shorts/Ya74m-RaCZM?feature=share"));
-                startActivity(myIntent);
-                break;
-            case R.id.rates:
-//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()));
-//                startActivity(browserIntent);
-                break;
-            case R.id.follow:
-//                startTask();
-//                click+=1;
-                Intent intent = new Intent(doTask.this, more.class);
-                startActivity(intent);
-                break;
-        }
     }
 
 

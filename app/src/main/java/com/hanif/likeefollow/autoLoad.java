@@ -65,7 +65,7 @@ public class autoLoad {
 
     public static void alart(Context context, String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Likeer Instagram");
+        builder.setTitle("Likeer Insta");
         builder.setMessage(text);
         AlertDialog alert = builder.create();
         alert.show();

@@ -41,8 +41,6 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public String date;
     public Button claimedButton;
     public String btnText;
-    private RewardedAd mRewardedAd;
-    public boolean isRewarded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,7 +178,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public void loadAdd() {
         new android.app.AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("TikLikes")
+                .setTitle("Likeer insta")
                 .setMessage("Watch add to claim this offer")
                 .setPositiveButton("OK", (dialog, which) ->{
                     autoLoad.loadReward(this, bonus.this,"ca-app-pub-9422110628550448/8678788991", "bonus");
