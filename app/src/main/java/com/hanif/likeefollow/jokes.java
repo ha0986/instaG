@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +40,40 @@ public class jokes extends AppCompatActivity {
 
 
 
-        getJokes();
+
+
+        Button dropDown = findViewById(R.id.dropdown);
+        dropDown.setOnClickListener(v->{
+            PopupMenu popup = new PopupMenu(getApplicationContext(), dropDown);
+
+            popup.getMenuInflater().inflate(R.menu.language, popup.getMenu());
+            popup.setOnMenuItemClickListener(item -> {
+                switch (item.getItemId()) {
+                    case R.id.bangla:
+                        getJokes("https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/jokes.json");
+                        break;
+
+                    case R.id.english:
+                        getJokes("https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/english.json");
+                        break;
+                    case R.id.hindi:
+                        getJokes("https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/hindi.json");
+                        break;
+                    case R.id.arabic:
+                        getJokes("https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/arabic.json");
+                        break;
+                }
+
+                return false;
+            });
+
+
+            popup.show();
+
+        });
+
+
+        getJokes("https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/jokes.json");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -90,8 +124,7 @@ public class jokes extends AppCompatActivity {
         }
     }
 
-    public void getJokes(){
-        String url = "https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/jokes.json";
+    public void getJokes(String url){
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,

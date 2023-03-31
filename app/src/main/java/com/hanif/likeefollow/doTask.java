@@ -36,7 +36,6 @@ import java.util.Arrays;
 
 
 public class doTask extends AppCompatActivity{
-    public Intent myIntent;
     private AdView mAdView;
     public static TextView userpoints;
     public String minusUser;
@@ -120,8 +119,7 @@ public class doTask extends AppCompatActivity{
         }else if (minusUser.contains("~")){
             minusUser = minusUser.replace("~","$");
         }
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/"+ minusUser));
-        startActivity(intent);
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/"+ minusUser)));
     }
 
 
@@ -136,8 +134,7 @@ public class doTask extends AppCompatActivity{
     }
 
     public void onBackPressed() {
-        Intent myIntent = new Intent(doTask.this, profile.class);
-        startActivity(myIntent);
+        startActivity(new Intent(doTask.this, profile.class));
     }
 
 

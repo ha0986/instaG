@@ -47,4 +47,8 @@
     <string name="robot">+200</string>
     <string name="poi">Points: </string>
     <string name="try_other_apps">Try My apps</string>
+    <string name="arabic">Arabic</string>
+    <string name="hindi">Hindi</string>
+    <string name="english">English</string>
+    <string name="bangla">Bangla</string>
 </resources>

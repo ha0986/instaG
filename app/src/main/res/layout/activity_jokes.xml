@@ -82,12 +82,27 @@
         android:text="@string/loading_jokes"
         android:textAlignment="gravity"
         android:textColor="#00FEFE"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.516" />
+
+    <Button
+        android:id="@+id/dropdown"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Bangla"
+        android:textAllCaps="false"
+        android:textColor="#191C26"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
