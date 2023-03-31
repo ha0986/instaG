@@ -51,4 +51,5 @@
     <string name="hindi">Hindi</string>
     <string name="english">English</string>
     <string name="bangla">Bangla</string>
+    <string name="get_back_to_task">Get Back to Task</string>
 </resources>
