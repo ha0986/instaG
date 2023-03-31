@@ -16,7 +16,7 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        autoLoad.loadAdd(this);
+
         move();
 
     }
@@ -29,7 +29,7 @@ public class splash extends AppCompatActivity {
             Intent myIntent = new Intent(splash.this, login.class);
             startActivity(myIntent);
         }else {
-
+            autoLoad.loadAdd(this);
             autoLoad.userName = username;
             autoLoad.getdata();
             Intent myIntent = new Intent(splash.this, doTask.class);

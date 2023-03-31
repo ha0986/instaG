@@ -70,6 +70,7 @@ public class login extends AppCompatActivity {
     }
 
     public void changeScene(){
+        autoLoad.loadAdd(this);
         Intent myIntent = new Intent(login.this, bonus.class);
         startActivity(myIntent);
     }

@@ -5,23 +5,23 @@
     android:id="@+id/relativeLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#191C26"
     tools:context=".bonus">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="35dp"
         android:backgroundTint="#1B1E28"
         app:cardBackgroundColor="#1B1E28"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.97">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,14 +81,13 @@
         android:id="@+id/cardView5"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.88">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,16 +143,16 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView8"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.79">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -213,14 +212,13 @@
         android:id="@+id/cardView4"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.7">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -280,14 +278,13 @@
         android:id="@+id/cardView7"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.61">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -343,16 +340,16 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView9"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.52">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -411,14 +408,13 @@
         android:id="@+id/cardView3"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.43">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -473,29 +469,17 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#1B1E28"
-        android:contentDescription="@string/a"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
         android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.33999997">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -558,13 +542,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-9422110628550448/1694359733"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.airbnb.lottie.LottieAnimationView
@@ -576,7 +561,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.061"
+        app:layout_constraintVertical_bias="0.120000005"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/gits" />
@@ -585,17 +570,16 @@
         android:id="@+id/backs"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#1B1E28"
         android:text="Get Back to Task"
         android:textAllCaps="false"
         android:textColor="#01E3FF"
         android:textStyle="bold"
         app:cornerRadius="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

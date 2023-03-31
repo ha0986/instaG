@@ -101,25 +101,28 @@ public class doTask extends AppCompatActivity{
     @SuppressLint("SetTextI18n")
     public void startTask(){
         String[] toSplit = autoLoad.nameList.get(click).split("=");
-        minusUser = toSplit[0];
-        plusPoints = plusPoints+100;
-        minusPoint =Integer.parseInt(toSplit[1])-100;
-        autoLoad.storePlusMinus(plusPoints,minusUser, minusPoint);
-        clicked();
-        autoLoad.points = String.valueOf(plusPoints);
-        userpoints.setText(plusPoints.toString());
-        if(showInter.contains(click)){
-            autoLoad.showInter(this);
+        if (toSplit.length==2){
+            minusUser = toSplit[0];
+            plusPoints = plusPoints+100;
+            minusPoint =Integer.parseInt(toSplit[1])-100;
+            autoLoad.storePlusMinus(plusPoints,minusUser, minusPoint);
+            clicked();
+            autoLoad.points = String.valueOf(plusPoints);
+            userpoints.setText(plusPoints.toString());
+            if(showInter.contains(click)){
+                autoLoad.showInter(this);
+            }
+            minusUser=minusUser.trim();
+            if (minusUser.contains("*")){
+                minusUser = minusUser.replace("*",".");
+            }else if (minusUser.contains("`")){
+                minusUser = minusUser.replace("`","/");
+            }else if (minusUser.contains("~")){
+                minusUser = minusUser.replace("~","$");
+            }
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/"+ minusUser)));
         }
-        minusUser=minusUser.trim();
-        if (minusUser.contains("*")){
-            minusUser = minusUser.replace("*",".");
-        }else if (minusUser.contains("`")){
-            minusUser = minusUser.replace("`","/");
-        }else if (minusUser.contains("~")){
-            minusUser = minusUser.replace("~","$");
-        }
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/"+ minusUser)));
+
     }
 
 
