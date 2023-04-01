@@ -120,7 +120,7 @@
                     android:textAllCaps="false"
                     android:textColor="#2B0000"
                     app:cornerRadius="10dp"
-                    app:icon="@drawable/likeer"
+                    app:icon="@drawable/likee"
                     app:iconTint="#00FFFFFF"
                     app:iconTintMode="add" />
 
