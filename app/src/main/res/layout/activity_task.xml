@@ -10,6 +10,25 @@
     tools:context=".doTask">
 
 
+    <Button
+        android:id="@+id/proof3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="@string/how_to_use"
+        android:textAllCaps="false"
+        android:textColor="#00FDFD"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#01F2F2"
+        app:strokeWidth="2.5sp" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
         android:layout_height="220dp"
@@ -174,24 +193,21 @@
         app:strokeWidth="2.5sp" />
 
     <Button
-        android:id="@+id/proof"
-        android:layout_width="150dp"
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
         android:backgroundTint="#00FFFFFF"
-        android:text="@string/how_to_use"
-        android:textAllCaps="false"
-        android:textColor="#00FDFD"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="60dp"
+        android:contentDescription="@string/back"
+        app:cornerRadius="80dp"
+        app:icon="@drawable/baseline_undo_24"
+        app:iconTint="#00FDFD"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#01F2F2"
         app:strokeWidth="2.5sp" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

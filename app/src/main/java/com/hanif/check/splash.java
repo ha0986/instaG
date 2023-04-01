@@ -1,11 +1,11 @@
-package com.hanif.likeefollow;
+package com.hanif.check;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 
 import java.util.Objects;
 
@@ -15,7 +15,6 @@ public class splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
 
         move();
 
@@ -28,12 +27,14 @@ public class splash extends AppCompatActivity {
         if (Objects.equals(username, "@hanif")){
             Intent myIntent = new Intent(splash.this, login.class);
             startActivity(myIntent);
+            finish();
         }else {
             autoLoad.loadAdd(this);
             autoLoad.userName = username;
             autoLoad.getdata();
             Intent myIntent = new Intent(splash.this, doTask.class);
             startActivity(myIntent);
+            finish();
         }
     }
 

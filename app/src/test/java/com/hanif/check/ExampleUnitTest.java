@@ -1,4 +1,4 @@
-package com.hanif.likeefollow;
+package com.hanif.check;
 
 import org.junit.Test;
 

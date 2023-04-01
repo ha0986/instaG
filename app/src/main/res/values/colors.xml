@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="favorite">#00FEFE</color>
     <color name="fav">#00FEFE</color>
+    <color name="background">#191C26</color>
 </resources>
