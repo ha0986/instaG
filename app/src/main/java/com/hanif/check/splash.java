@@ -13,6 +13,7 @@ public class splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_Tikfollow);
         setContentView(R.layout.activity_splash);
 
         move();

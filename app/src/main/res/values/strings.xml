@@ -20,7 +20,7 @@
     <string name="enter_your_Likee_username">Login using Insta username</string>
     <string name="type_here">Type here</string>
     <string name="done">Done</string>
-    <string name="claim">Claim</string>
+    <string name="claim">  Claim  </string>
     <string name="claim_them_for_free">Claim them for free</string>
     <string name="_1_follow">+1 Follow</string>
     <string name="_25_likes">+ 25 likes</string>
@@ -53,4 +53,13 @@
     <string name="bangla">Bangla</string>
     <string name="get_back_to_task">Get Back to Task</string>
     <string name="back">back</string>
+    <string name="get_tiktok_free_likes_and_folowers">Get Tiktok free likes and followers</string>
+    <string name="let_your_king_learn_english_alphabet_easily">Let your kids learn english alphabet easily</string>
+    <string name="earn_and_bost_your_brain_by_playing_this_game">Earn and boost your brain by playing this game</string>
+    <string name="earn_money_by_playing_games">Earn money by playing games</string>
+    <string name="exchange_likes_and_follow_on_likee">Exchange likes and follow on likee</string>
+    <string name="get_follow_on_likee">Get follow on Likee</string>
+    <string name="enjoy_most_famous_ludo_game">Enjoy most famous ludo game</string>
+    <string name="get_free_folowers_on_instagram">Get free folowers on Instagram</string>
+    <string name="download_video_from_facebook_insagram_tiktok_likee">Download video from Facebook, Instagram, Tiktok ,Likee</string>
 </resources>

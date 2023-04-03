@@ -1,177 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
     tools:context=".more">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textViewss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/try_other_apps"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-        <TextView
-            android:id="@+id/textViewss"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/try_other_apps"
-            android:textAlignment="center"
-            android:textColor="#E91E63"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/tiklikes"
 
-            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/get_tiktok_free_likes_and_folowers"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/to"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/tiklikes"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Get Tiktok free likes and folowers"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/tiklikes"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/abc"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/let_your_king_learn_english_alphabet_easily"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/abc"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/abc"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Let your king learn english alphabet easily"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/abc"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/puzzle"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/earn_and_bost_your_brain_by_playing_this_game"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/puzzle"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/puzzle"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Earn and bost your brain by playing this game"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/puzzle"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/word"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/earn_money_by_playing_games"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/word"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/word"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Earn money by playing games"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/word"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/tikfollow"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/exchange_likes_and_follow_on_likee"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/tikfollow"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/tikfollow"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Exchange likes and follow on likee"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/tikfollow"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/likee"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/get_follow_on_likee"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/likee"
+                app:iconSize="40dp"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/likee"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Get follow on Likee"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/likee"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/ludo"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/enjoy_most_famous_ludo_game"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/ludo"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-                <Button
-                    android:id="@+id/ludo"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Enjoy most famous ludo game"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/ludo"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
-
-                <Button
-                    android:id="@+id/instafollow"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Get free folowers on Instagram"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/instafollow"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/instafollow"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/get_free_folowers_on_instagram"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/insta"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
 
-                <Button
-                    android:id="@+id/download"
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/white"
-                    android:text="Download video from Facebook, Insagram, Tiktok ,Likee"
-                    android:textAllCaps="false"
-                    android:textColor="#2B0000"
-                    app:cornerRadius="10dp"
-                    app:icon="@drawable/download"
-                    app:iconTint="#00FFFFFF"
-                    app:iconTintMode="add" />
+            <Button
+                android:id="@+id/download"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:backgroundTint="@color/background"
+                android:text="@string/download_video_from_facebook_insagram_tiktok_likee"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/download"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="add" />
 
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

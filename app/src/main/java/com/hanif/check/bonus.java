@@ -61,7 +61,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         getDatas();
 
-        AdView mAdView = findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView3);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
