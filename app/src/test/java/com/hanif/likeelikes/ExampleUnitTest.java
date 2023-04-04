@@ -1,4 +1,4 @@
-package com.hanif.check;
+package com.hanif.likeelikes;
 
 import org.junit.Test;
 

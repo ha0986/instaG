@@ -40,8 +40,9 @@
                 android:textColor="#FFFFFF"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/to"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/abc"
@@ -53,8 +54,9 @@
                 android:textColor="#FFFFFF"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/abc"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/puzzle"
@@ -66,8 +68,9 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/puzzle"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/word"
@@ -79,8 +82,9 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/word"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/tikfollow"
@@ -92,8 +96,9 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/tikfollow"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/likee"
@@ -106,8 +111,9 @@
                 app:cornerRadius="10dp"
                 app:icon="@drawable/likee"
                 app:iconSize="40dp"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/ludo"
@@ -119,8 +125,9 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/ludo"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
             <Button
                 android:id="@+id/instafollow"
@@ -132,8 +139,9 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/insta"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#33FFFFFF"
+                app:strokeWidth="2dp" />
 
 
             <Button
@@ -146,8 +154,9 @@
                 android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@drawable/download"
-                app:iconTint="#00FFFFFF"
-                app:iconTintMode="add" />
+                app:iconTintMode="multiply"
+                app:strokeColor="#1AFFFFFF"
+                app:strokeWidth="2dp" />
 
         </LinearLayout>
     </ScrollView>

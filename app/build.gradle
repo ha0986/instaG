@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hanif.check'
+    namespace 'com.hanif.likeelikes'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.hanif.check"
+        applicationId "com.hanif.likeelikes"
         minSdk 21
         targetSdk 33
         versionCode 14

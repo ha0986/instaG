@@ -1,4 +1,4 @@
-package com.hanif.check;
+package com.hanif.likeelikes;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
