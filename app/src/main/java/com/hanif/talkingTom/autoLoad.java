@@ -1,4 +1,4 @@
-package com.hanif.likeelikes;
+package com.hanif.talkingTom;
 
 
 import android.annotation.SuppressLint;
@@ -113,7 +113,7 @@ public class autoLoad {
         if (mInterstitialAd== null){
             AdRequest loadInter = new AdRequest.Builder().build();
 
-            InterstitialAd.load(context, "ca-app-pub-9422110628550448/4571820425", loadInter,
+            InterstitialAd.load(context, "ca-app-pub-9422110628550448/9822223899", loadInter,
                     new InterstitialAdLoadCallback() {
                         @Override
                         public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

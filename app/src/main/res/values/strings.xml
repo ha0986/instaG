@@ -22,12 +22,14 @@
     <string name="done">Done</string>
     <string name="claim">  Claim  </string>
     <string name="claim_them_for_free">Claim them for free</string>
-    <string name="_1_follow">+1 Follow</string>
-    <string name="_25_likes">+ 25 likes</string>
-    <string name="_20_likes">+ 20 likes</string>
-    <string name="_15_likes">+15 likes</string>
-    <string name="_10_likes">+10 likes</string>
-    <string name="_5_likes">+ 5 likes</string>
+    <string name="_1_follow">+1 Follow (Day:1)</string>
+    <string name="_1_follow3">+1 Follow (Day:3)</string>
+    <string name="_1_follow5">+1 Follow (Day:5)</string>
+    <string name="_25_likes">+ 25 likes (Day:8)</string>
+    <string name="_20_likes">+ 20 likes (Day:7)</string>
+    <string name="_15_likes">+15 likes (Day:6)</string>
+    <string name="_10_likes">+10 likes (Day:4)</string>
+    <string name="_5_likes">+ 5 likes (Day:2)</string>
     <string name="claim_bonus">Claim Bonus</string>
     <string name="loading_jokes">Loading Jokes</string>
     <string name="click_to_claim_bonus">Click TO Claim Bonus</string>
@@ -62,4 +64,8 @@
     <string name="enjoy_most_famous_ludo_game">Enjoy most famous ludo game</string>
     <string name="get_free_folowers_on_instagram">Get free folowers on Instagram</string>
     <string name="download_video_from_facebook_insagram_tiktok_likee">Download video from Facebook, Instagram, Tiktok ,Likee</string>
+    <string name="copy">copy</string>
+    <string name="next">next</string>
+    <string name="prev">prev</string>
+    <string name="_1_follows">+1 Follow</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.hanif.likeelikes;
+package com.hanif.talkingTom;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;

@@ -1,4 +1,4 @@
-package com.hanif.likeelikes;
+package com.hanif.talkingTom;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -59,7 +59,7 @@ public class doTask extends AppCompatActivity{
 
         //test      ca-app-pub-3940256099942544/5224354917
         //  main    ca-app-pub-9422110628550448/1122651035
-        reward.setOnClickListener(v->  autoLoad.loadReward(this, doTask.this, "ca-app-pub-9422110628550448/1122651035", "doTask"));
+        reward.setOnClickListener(v->  autoLoad.loadReward(this, doTask.this, "ca-app-pub-9422110628550448/6158311052", "doTask"));
         back.setOnClickListener(v-> startActivity(new Intent(doTask.this, profile.class)));
         jokes.setOnClickListener(v-> startActivity(new Intent(doTask.this, jokes.class)));
         follow.setOnClickListener(v->{
@@ -112,7 +112,8 @@ public class doTask extends AppCompatActivity{
             }else if (minusUser.contains("~")){
                 minusUser = minusUser.replace("~","$");
             }
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/"+ minusUser)));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/" + minusUser.trim()));
+            startActivity(intent);
         }
 
     }

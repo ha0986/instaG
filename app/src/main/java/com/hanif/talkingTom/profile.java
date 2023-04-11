@@ -1,4 +1,4 @@
-package com.hanif.likeelikes;
+package com.hanif.talkingTom;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,7 +35,7 @@ public class profile extends AppCompatActivity{
         rate.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()))));
         jokesBtn.setOnClickListener(v -> startActivity(new Intent(profile.this, jokes.class)));
         task.setOnClickListener(v -> startActivity(new Intent(profile.this, doTask.class)));
-        reward.setOnClickListener(v -> autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/5693330404", "profile"));
+        reward.setOnClickListener(v -> autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/8994806504", "profile"));
         mores.setOnClickListener(v -> startActivity(new Intent(profile.this, more.class)));
         exit.setOnClickListener(v -> exit());
 

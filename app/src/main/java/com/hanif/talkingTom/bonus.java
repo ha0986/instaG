@@ -1,4 +1,4 @@
-package com.hanif.likeelikes;
+package com.hanif.talkingTom;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -170,7 +170,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 .setTitle("Likeer insta")
                 .setMessage("Watch add to claim this offer")
                 .setPositiveButton("OK", (dialog, which) ->{
-                    autoLoad.loadReward(this, bonus.this,"ca-app-pub-9422110628550448/8678788991", "bonus");
+                    autoLoad.loadReward(this, bonus.this,"ca-app-pub-9422110628550448/8777020942", "bonus");
                     new Handler().postDelayed(() -> claim(), 20000);
                 })
                 .setNegativeButton("No", null)
