@@ -1,5 +1,7 @@
 package com.hanif.talkingTom;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -7,6 +9,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +52,7 @@ public class doTask extends AppCompatActivity{
         Button follow = findViewById(R.id.follow);
         Button rate = findViewById(R.id.rates);
         Button proof = findViewById(R.id.proof2);
+        Button use = findViewById(R.id.proof3);
         userpoints = findViewById(R.id.taskpoint);
         LottieAnimationView view = findViewById(R.id.animationView);
 
@@ -63,11 +67,17 @@ public class doTask extends AppCompatActivity{
         back.setOnClickListener(v-> startActivity(new Intent(doTask.this, profile.class)));
         jokes.setOnClickListener(v-> startActivity(new Intent(doTask.this, jokes.class)));
         follow.setOnClickListener(v->{
-            startTask();
-            click+=1;
+            if (autoLoad.nameList.size()<click-2) {
+                Toast.makeText(this, "Nothing Left please Try later", Toast.LENGTH_SHORT).show();
+            }else {
+                startTask();
+                click+=1;
+            }
+
         });
         rate.setOnClickListener(v->startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()))));
         proof.setOnClickListener(v->startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/shorts/Ya74m-RaCZM?feature=share"))));
+        use.setOnClickListener(v->startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/I3CeSBzwMfw"))));
         view.setOnClickListener(v-> startActivity(new Intent(doTask.this, bonus.class)));
 
         autoLoad.getDatas();
@@ -104,7 +114,6 @@ public class doTask extends AppCompatActivity{
             if(showInter.contains(click)){
                 autoLoad.showInter(this);
             }
-            minusUser=minusUser.trim();
             if (minusUser.contains("*")){
                 minusUser = minusUser.replace("*",".");
             }else if (minusUser.contains("`")){
@@ -124,7 +133,7 @@ public class doTask extends AppCompatActivity{
     public void clicked(){
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
-        autoLoad.followed = autoLoad.followed+ ","+ minusUser;
+        autoLoad.followed = autoLoad.followed+ ","+ minusUser.trim();
         editor.putString("done", autoLoad.followed);
         editor.apply();
     }

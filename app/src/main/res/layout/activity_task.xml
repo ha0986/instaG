@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191C26"
+    android:background="@color/background"
     android:visibility="visible"
     tools:context=".doTask">
 
@@ -15,10 +15,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/background"
         android:text="@string/how_to_use"
         android:textAllCaps="false"
-        android:textColor="#00FDFD"
+        android:textColor="@color/text"
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="60dp"
@@ -26,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.832"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#01F2F2"
+        app:strokeColor="@color/strok"
         app:strokeWidth="2.5sp" />
 
     <androidx.cardview.widget.CardView
@@ -52,7 +52,7 @@
             android:paddingBottom="30dp"
             android:text="@string/click_to_claim_bonus"
             android:textAlignment="center"
-            android:textColor="#00FEFE"
+            android:textColor="@color/text"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -72,7 +72,7 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/points"
             android:textAlignment="center"
-            android:textColor="#00FEFE"
+            android:textColor="@color/text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="  Points:"
             android:textAlignment="center"
-            android:textColor="#00FEFE"
+            android:textColor="@color/text"
             android:textSize="30sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
@@ -106,10 +106,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/background"
         android:text="@string/_1_follows"
         android:textAllCaps="false"
-        android:textColor="#00FDFD"
+        android:textColor="@color/text"
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="60dp"
@@ -117,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView10"
-        app:strokeColor="#01F2F2"
+        app:strokeColor="@color/strok"
         app:strokeWidth="2.5sp" />
 
     <Button
@@ -125,10 +125,10 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/background"
         android:text="@string/robot"
         android:textAllCaps="false"
-        android:textColor="#00FDFD"
+        android:textColor="@color/text"
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="60dp"
@@ -136,7 +136,7 @@
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView10"
-        app:strokeColor="#01F2F2"
+        app:strokeColor="@color/strok"
         app:strokeWidth="2.5sp" />
 
     <Button
@@ -144,8 +144,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/background"
         android:contentDescription="@string/back"
+        android:textColor="@color/text"
         app:cornerRadius="80dp"
         app:icon="@drawable/baseline_undo_24"
         app:iconTint="#00FDFD"
@@ -153,7 +154,7 @@
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#01F2F2"
+        app:strokeColor="@color/strok"
         app:strokeWidth="2.5sp" />
 
     <LinearLayout
@@ -171,14 +172,14 @@
             android:id="@+id/rates"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="@color/background"
             android:text="@string/rate_me"
             android:textAllCaps="false"
-            android:textColor="#00FDFD"
+            android:textColor="@color/text"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="60dp"
-            app:strokeColor="#01F2F2"
+            app:strokeColor="@color/strok"
             app:strokeWidth="2.5sp" />
 
         <Button
@@ -187,31 +188,30 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="@color/background"
             android:text="@string/jokes"
             android:textAllCaps="false"
-            android:textColor="#00FDFD"
+            android:textColor="@color/text"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="60dp"
-            app:strokeColor="#01F2F2"
+            app:strokeColor="@color/strok"
             app:strokeWidth="2.5sp" />
 
         <Button
             android:id="@+id/proof2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="@color/background"
             android:text="@string/proof"
             android:textAllCaps="false"
-            android:textColor="#00FDFD"
+            android:textColor="@color/text"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="60dp"
-            app:strokeColor="#01F2F2"
+            app:strokeColor="@color/strok"
             app:strokeWidth="2.5sp" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

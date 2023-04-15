@@ -316,21 +316,21 @@ public class autoLoad {
 
     public static void savedata(String userName) {
         DatabaseReference myRef = database.getReference("instafan");
-        myRef.child(userName).setValue(Integer.valueOf(points));
+        myRef.child(userName.trim()).setValue(Integer.valueOf(points));
     }
 
 
     public static void removedata(String userName) {
         DatabaseReference myRef = database.getReference("instafan");
-        myRef.child(userName).removeValue();
+        myRef.child(userName.trim()).removeValue();
 
     }
 
 
     public static void storePlusMinus(Integer pluspoints, String minusUser, Integer minusPoints) {
         DatabaseReference myRef = database.getReference("instafan");
-        myRef.child(userName).setValue(pluspoints);
-        myRef.child(minusUser).setValue(minusPoints);
+        myRef.child(userName.trim()).setValue(pluspoints);
+        myRef.child(minusUser.trim()).setValue(minusPoints);
     }
 
 }

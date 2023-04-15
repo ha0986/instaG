@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class profile extends AppCompatActivity{
@@ -21,18 +22,16 @@ public class profile extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        Button rate = findViewById(R.id.rate);
-        Button edit = findViewById(R.id.edit);
-        Button task = findViewById(R.id.task);
-        Button reward = findViewById(R.id.reward);
-        Button mores = findViewById(R.id.more);
-        Button exit = findViewById(R.id.exit);
+        ImageButton edit = findViewById(R.id.edit);
+        ImageButton task = findViewById(R.id.task);
+        ImageButton reward = findViewById(R.id.reward);
+        ImageButton mores = findViewById(R.id.more);
+        ImageButton exit = findViewById(R.id.exit);
         points = findViewById(R.id.points);
         TextView username = findViewById(R.id.userName);
         Button jokesBtn = findViewById(R.id.jokesbtn);
 
 
-        rate.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+ getPackageName()))));
         jokesBtn.setOnClickListener(v -> startActivity(new Intent(profile.this, jokes.class)));
         task.setOnClickListener(v -> startActivity(new Intent(profile.this, doTask.class)));
         reward.setOnClickListener(v -> autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/8994806504", "profile"));
