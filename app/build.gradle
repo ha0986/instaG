@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace 'com.hanif.talkingTom'
+    namespace 'com.hanif.likeefollow'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.hanif.talkingTom"
+        applicationId "com.hanif.likeefollow"
         minSdk 21
         targetSdk 33
-        versionCode 2
-        versionName "0.2"
+        versionCode 15
+        versionName "1.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

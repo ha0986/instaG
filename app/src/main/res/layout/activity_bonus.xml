@@ -36,7 +36,9 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:cornerRadius="20dp" />
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/strok"
+        app:strokeWidth="2dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,7 +72,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp" />
 
                 <Button
@@ -125,7 +127,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp" />
 
             </androidx.cardview.widget.CardView>
@@ -150,7 +152,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp" />
 
                 <Button
@@ -190,7 +192,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp" />
 
                 <Button
@@ -230,7 +232,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp" />
 
                 <Button
@@ -286,7 +288,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp"
                     tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -312,7 +314,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp" />
 
                 <Button
@@ -369,7 +371,7 @@
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    app:backgroundTint="@color/status"
+                    app:backgroundTint="@color/Button"
                     app:cornerRadius="60dp"
                     tools:ignore="DuplicateSpeakableTextCheck" />
 

@@ -10,6 +10,24 @@
     tools:context=".login">
 
 
+    <Button
+        android:id="@+id/gp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/status"
+        android:text="@string/continue_as_guest"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="0dp"
@@ -43,8 +61,7 @@
         android:id="@+id/cardView"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/background"
-        app:cardBackgroundColor="#00FFFF"
+        android:backgroundTint="@color/status"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +87,7 @@
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/background"
+        android:backgroundTint="@color/status"
         android:text="@string/done"
         android:textColor="@color/text"
         android:textSize="20sp"
@@ -83,20 +100,19 @@
         app:layout_constraintVertical_bias="0.559" />
 
     <Button
-        android:id="@+id/gp"
-        android:layout_width="300dp"
+        android:id="@+id/howTo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/background"
-        android:text="@string/continue_as_guest"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/status"
+        android:text="@string/how_to_use"
+        android:textAllCaps="false"
         android:textColor="@color/text"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

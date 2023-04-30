@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.hanif.talkingTom">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -27,7 +26,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name="com.hanif.talkingTom.splash"
+            android:name="com.hanif.likeefollow.splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,42 +39,42 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.profile"
+            android:name="com.hanif.likeefollow.profile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.login"
+            android:name="com.hanif.likeefollow.login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.doTask"
+            android:name="com.hanif.likeefollow.doTask"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.more"
+            android:name="com.hanif.likeefollow.more"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.bonus"
+            android:name="com.hanif.likeefollow.bonus"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.jokes"
+            android:name="com.hanif.likeefollow.jokes"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -87,7 +86,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9422110628550448~2466252712" />
+            android:value="ca-app-pub-9422110628550448~1885931421" />
     </application>
 
 </manifest>

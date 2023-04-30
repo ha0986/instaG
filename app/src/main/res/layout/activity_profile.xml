@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/a"
                 app:srcCompat="@drawable/baseline_rocket_launch_24" />
 
@@ -157,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/a"
                 app:srcCompat="@drawable/baseline_redeem_24" />
 
@@ -184,7 +184,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/a"
                 app:srcCompat="@drawable/baseline_android_24" />
 
@@ -211,7 +211,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/a"
                 app:srcCompat="@drawable/baseline_exit_to_app_24" />
 

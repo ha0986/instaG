@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1019738262577",
-    "firebase_url": "https://instragram-6bda8-default-rtdb.firebaseio.com",
-    "project_id": "instragram-6bda8",
-    "storage_bucket": "instragram-6bda8.appspot.com"
+    "project_number": "85464432174",
+    "firebase_url": "https://likees-default-rtdb.firebaseio.com",
+    "project_id": "likees",
+    "storage_bucket": "likees.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1019738262577:android:525106ab5a4a409ae59910",
+        "mobilesdk_app_id": "1:85464432174:android:f1df30739ff49adf5069bf",
         "android_client_info": {
-          "package_name": "com.hanif.talkingTom"
+          "package_name": "com.hanif.likeefollow"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1019738262577-auiru739jdpmpfqpt02g16abug73cmuj.apps.googleusercontent.com",
+          "client_id": "85464432174-3ajgsbdpstb5oe84s9dmdb9c26lirojm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDJd77iRAsPVs3FtqujkqHXtOZaq3JDU50"
+          "current_key": "AIzaSyAF5-r5RvMVUlrWFd9--axzVF_aZsVMdNw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1019738262577-auiru739jdpmpfqpt02g16abug73cmuj.apps.googleusercontent.com",
+              "client_id": "85464432174-3ajgsbdpstb5oe84s9dmdb9c26lirojm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
