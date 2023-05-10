@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
 import com.android.volley.Request;
@@ -31,6 +32,9 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -288,39 +292,77 @@ public class autoLoad {
         });
     }
 
+
+
+
+    static ArrayList<String> user= new ArrayList<>();
     public static void getDatas() {
         DatabaseReference myRef = database.getReference("tikfan");
 
+        myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-        myRef.get().addOnCompleteListener(task -> {
-            if (!task.isSuccessful()) {
-                Log.e("firebase", "Error getting data", task.getException());
-            } else {
-                String dict = String.valueOf(task.getResult().getValue());
-                dict = dict.replace("{", "");
-                dict = dict.replace("}", "");
-                String[] list = dict.split(",");
-                String[] foll = followed.split(",");
-                follow.addAll(Arrays.asList(foll));
-
-
-//jei id gulake follow kora hoiche oigulake splash screen hote followed variable a
-// add kora hoiche .Tarpor aigulake follow array te add kora holo
-
-
-//aikhane jei id gula purbe follow kora hoiche oigulake remove kore
-// namelist valiable a add kortechi
-                for (int i = 0; i < list.length; i++) {
-                    String[] split = list[i].split("=");
-
-                    if (Integer.parseInt(split[1]) > 200 && !follow.contains(split[0])) {
-                        nameList.add(list[i]);
-                    }
-
-                }
+                    Log.d("firebase", String.valueOf(snapshot.getChildren().));
 
             }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
         });
+
+
+
+//
+//        myRef.get().addOnCompleteListener(task -> {
+//            if (!task.isSuccessful()) {
+//                Log.e("firebase", "Error getting data", task.getException());
+//            } else {
+//                Log.d("firebase", String.valueOf(task.getResult()));
+
+//                String dict = String.valueOf(task.getResult().getValue());
+//                dict = dict.replace("{", "");
+//                dict = dict.replace("}", "");
+//                String[] list = dict.split(",");
+//                String[] foll = followed.split(",");
+//                follow.addAll(Arrays.asList(foll));
+//
+//
+////jei id gulake follow kora hoiche oigulake splash screen hote followed variable a
+//// add kora hoiche .Tarpor aigulake follow array te add kora holo
+//
+//
+////aikhane jei id gula purbe follow kora hoiche oigulake remove kore
+//// namelist valiable a add kortechi
+//                for (int i = 0; i < list.length; i++) {
+//                    String[] split = list[i].split("=");
+//
+//                    if (Integer.parseInt(split[1]) > 200 && !follow.contains(split[0])) {
+//                        nameList.add(list[i]);
+//                    }
+//
+//                }
+//
+//            }
+//        });
     }
 
     public static void savedata(String userName) {

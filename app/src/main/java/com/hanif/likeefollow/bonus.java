@@ -167,7 +167,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public void loadAdd() {
         new android.app.AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Likeer insta")
+                .setTitle("Likeer")
                 .setMessage("Watch add to claim this offer")
                 .setPositiveButton("OK", (dialog, which) ->{
                     autoLoad.loadReward(this, bonus.this,autoLoad.bonusAdd, "bonus");
