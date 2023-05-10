@@ -5,7 +5,6 @@
     android:id="@+id/relativeLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:textAlignment="center"
     tools:context=".login">
 
@@ -30,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="@string/enter_your_Likee_username"
         android:textAlignment="center"
-        android:textColor="@color/text"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

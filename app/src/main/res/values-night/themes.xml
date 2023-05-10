@@ -1,19 +1,19 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Tikfollow" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Tikfollow" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/favorite</item>
+        <item name="colorPrimaryVariant">@color/background</item>
         <item name="colorOnPrimary">@color/favorite</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/favorite</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >#E91E63</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="splashSscreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="splashSscreenTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_image</item>
         <item name="android:statusBarColor"> @color/status</item>
     </style>

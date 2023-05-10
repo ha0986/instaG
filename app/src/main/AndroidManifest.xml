@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.hanif.talkingTom">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-
-
-
-
 
     <application
         android:allowBackup="true"
@@ -25,9 +19,14 @@
         android:supportsRtl="true"
         android:theme="@style/splashSscreenTheme"
         tools:targetApi="31">
-
         <activity
-            android:name="com.hanif.talkingTom.splash"
+            android:name=".spin"
+            android:exported="false" />
+        <activity
+            android:name=".hasgTag"
+            android:exported="false" />
+        <activity
+            android:name=".splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,50 +39,40 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.profile"
+            android:name=".profile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.login"
+            android:name=".login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.doTask"
+            android:name=".more"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.more"
+            android:name=".bonus"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.hanif.talkingTom.bonus"
+            android:name=".jokes"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name="com.hanif.talkingTom.jokes"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-
-
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

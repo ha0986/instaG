@@ -133,7 +133,8 @@
                 android:layout_gravity="center"
                 android:background="#00FFFFFF"
                 android:contentDescription="@string/a"
-                app:srcCompat="@drawable/baseline_rocket_launch_24" />
+                app:tint="@color/status"
+                app:srcCompat="@drawable/baseline_grid_3x3_24" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -33,7 +33,6 @@ public class profile extends AppCompatActivity{
 
 
         jokesBtn.setOnClickListener(v -> startActivity(new Intent(profile.this, jokes.class)));
-        task.setOnClickListener(v -> startActivity(new Intent(profile.this, doTask.class)));
         reward.setOnClickListener(v -> autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/8994806504", "profile"));
         mores.setOnClickListener(v -> startActivity(new Intent(profile.this, more.class)));
         exit.setOnClickListener(v -> exit());

@@ -40,7 +40,7 @@ import java.util.Objects;
 
 
 public class autoLoad {
-    public static String userName = "@hanif", points = "500", followed = "@hanif, @tikfollow" ;
+    public static String userName = "@hanif", points = "500", followed = "@hanif, @tikfollow";
     static RewardedAd mRewardedAd;
     private static InterstitialAd mInterstitialAd;
     public static boolean connection = false;
@@ -81,12 +81,12 @@ public class autoLoad {
         queue.add(stringRequest);
     }
 
-    public static boolean isPackageExisted(Context context){
+    public static boolean isPackageExisted(Context context) {
         final PackageManager packageManager = context.getPackageManager();
         Intent intent = packageManager.getLaunchIntentForPackage("com.instagram.android");
         if (intent == null) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
@@ -110,7 +110,7 @@ public class autoLoad {
     }
 
     public static void loadInter(Context context, Activity activity) {
-        if (mInterstitialAd== null){
+        if (mInterstitialAd == null) {
             AdRequest loadInter = new AdRequest.Builder().build();
 
             InterstitialAd.load(context, "ca-app-pub-9422110628550448/9822223899", loadInter,
@@ -126,13 +126,12 @@ public class autoLoad {
                             mInterstitialAd = null;
                         }
                     });
-        }else {
+        } else {
             showInter(activity);
         }
 
 
     }
-
 
 
     public static void showInter(Activity activity) {
@@ -144,9 +143,7 @@ public class autoLoad {
     }
 
 
-
-
-    public static void loadReward(Context context,Activity activity, String id, String screen) {
+    public static void loadReward(Context context, Activity activity, String id, String screen) {
         if (mRewardedAd == null) {
             isLoading = true;
             AdRequest adRequest = new AdRequest.Builder().build();
@@ -168,16 +165,14 @@ public class autoLoad {
                         }
 
                     });
-        }else {
+        } else {
             showReward(context, activity, id, screen);
         }
 
     }
 
 
-
-
-    public static void showReward(Context context,Activity activity, String id, String screen) {
+    public static void showReward(Context context, Activity activity, String id, String screen) {
 
         if (mRewardedAd == null) {
             Log.d("TAG", "The rewarded ad wasn't ready yet.");
@@ -201,7 +196,7 @@ public class autoLoad {
                     @Override
                     public void onAdDismissedFullScreenContent() {
                         mRewardedAd = null;
-                        if(screen == "bonus"){
+                        if (screen == "bonus") {
                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
                             builder.setTitle("Likeer insta");
                             builder.setMessage("You will get your offer within a day. Please keep patience");
@@ -216,103 +211,21 @@ public class autoLoad {
                 activity,
                 rewardItem -> {
                     int rewardAmount = rewardItem.getAmount();
-                    if (Objects.equals(screen, "doTask")){
-                        points = String.valueOf(Integer.parseInt(points)+rewardAmount);
-                        doTask.updatePoint();
+                    if (Objects.equals(screen, "doTask")) {
+                        points = String.valueOf(Integer.parseInt(points) + rewardAmount);
                         savedata(userName);
 
                     } else if (Objects.equals(screen, "profile")) {
-                        points = String.valueOf(Integer.parseInt(points)+rewardAmount);
+                        points = String.valueOf(Integer.parseInt(points) + rewardAmount);
                         profile.update();
                         savedata(userName);
-                    }else {
+                    } else {
                         isRewarded = true;
                     }
                 });
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public static void getdata() {
-
-        DatabaseReference myRef = database.getReference("instafan");
-
-
-        myRef.child(userName).get().addOnCompleteListener(task -> {
-            if (!task.isSuccessful()) {
-                Log.e("firebase", "Error getting data", task.getException());
-            } else {
-                Log.d("username", userName);
-                points = String.valueOf(task.getResult().getValue());
-                doTask.userpoints.setText(points);
-                doTask.plusPoints = Integer.valueOf(points);
-            }
-        });
-    }
-
-    public static void getDatas() {
-        DatabaseReference myRef = database.getReference("instafan");
-
-
-        myRef.get().addOnCompleteListener(task -> {
-            if (!task.isSuccessful()) {
-                Log.e("firebase", "Error getting data", task.getException());
-            } else {
-                String dict = String.valueOf(task.getResult().getValue());
-                dict = dict.replace("{", "");
-                dict = dict.replace("}", "");
-                String[] list = dict.split(",");
-                String[] foll = followed.split(",");
-                follow.addAll(Arrays.asList(foll));
-
-
-//jei id gulake follow kora hoiche oigulake splash screen hote followed variable a
-// add kora hoiche .Tarpor aigulake follow array te add kora holo
-
-
-//aikhane jei id gula purbe follow kora hoiche oigulake remove kore
-// namelist valiable a add kortechi
-                for (int i = 0; i < list.length; i++) {
-                    String[] split = list[i].split("=");
-
-                    if (Integer.parseInt(split[1]) > 200 && !follow.contains(split[0])) {
-                        nameList.add(list[i]);
-                    }
-
-                }
-
-            }
-        });
-    }
 
     public static void savedata(String userName) {
         DatabaseReference myRef = database.getReference("instafan");
@@ -324,13 +237,6 @@ public class autoLoad {
         DatabaseReference myRef = database.getReference("instafan");
         myRef.child(userName.trim()).removeValue();
 
-    }
-
-
-    public static void storePlusMinus(Integer pluspoints, String minusUser, Integer minusPoints) {
-        DatabaseReference myRef = database.getReference("instafan");
-        myRef.child(userName.trim()).setValue(pluspoints);
-        myRef.child(minusUser.trim()).setValue(minusPoints);
     }
 
 }

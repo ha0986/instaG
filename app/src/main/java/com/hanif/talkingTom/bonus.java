@@ -76,7 +76,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         back.setOnClickListener(v -> {
             autoLoad.showInter(this);
-            Intent myIntent = new Intent(bonus.this,doTask.class);
+            Intent myIntent = new Intent(bonus.this,profile.class);
             startActivity(myIntent);
         });
     }
@@ -200,14 +200,14 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         claimedButton.setText("claimed");
         claimedButton.setBackgroundColor(R.color.fav);
 
-        Intent myIntent = new Intent(bonus.this,doTask.class);
+        Intent myIntent = new Intent(bonus.this,profile.class);
         startActivity(myIntent);
     }
 
 
     public void onBackPressed() {
         autoLoad.showInter(this);
-        Intent myIntent = new Intent(bonus.this,doTask.class);
+        Intent myIntent = new Intent(bonus.this,profile.class);
         startActivity(myIntent);
     }
 

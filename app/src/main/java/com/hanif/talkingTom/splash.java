@@ -25,14 +25,13 @@ public class splash extends AppCompatActivity {
         String username = pref.getString("name", "@hanif");
         autoLoad.followed = pref.getString("done", "@hanif, @jakir");
         if (Objects.equals(username, "@hanif")){
-            Intent myIntent = new Intent(splash.this, login.class);
+            Intent myIntent = new Intent(splash.this, spin.class);
             startActivity(myIntent);
             finish();
         }else {
             autoLoad.loadAdd(this);
             autoLoad.userName = username;
-            autoLoad.getdata();
-            Intent myIntent = new Intent(splash.this, doTask.class);
+            Intent myIntent = new Intent(splash.this, spin.class);
             startActivity(myIntent);
             finish();
         }
