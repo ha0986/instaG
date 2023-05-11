@@ -1,4 +1,4 @@
-package com.hanif.talkingTom;
+package com.hanif.likeefollow;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;

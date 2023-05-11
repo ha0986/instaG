@@ -1,10 +1,9 @@
-package com.hanif.talkingTom;
+package com.hanif.likeefollow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -33,12 +32,12 @@ public class profile extends AppCompatActivity{
 
 
         jokesBtn.setOnClickListener(v -> startActivity(new Intent(profile.this, jokes.class)));
-        reward.setOnClickListener(v -> autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/8994806504", "profile"));
+        reward.setOnClickListener(v -> com.hanif.talkingTom.autoLoad.loadReward(this,profile.this, "ca-app-pub-9422110628550448/8994806504", "profile"));
         mores.setOnClickListener(v -> startActivity(new Intent(profile.this, more.class)));
         exit.setOnClickListener(v -> exit());
 
-        username.setText(autoLoad.userName);
-        points.setText(autoLoad.points);
+        username.setText(com.hanif.talkingTom.autoLoad.userName);
+        points.setText(com.hanif.talkingTom.autoLoad.points);
 
 
 
@@ -74,6 +73,6 @@ public class profile extends AppCompatActivity{
 
 
     public static void update(){
-        points.setText(autoLoad.points);
+        points.setText(com.hanif.talkingTom.autoLoad.points);
     }
 }
